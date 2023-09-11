@@ -1,23 +1,17 @@
-<a href="https://github.com/janneison">
-   <img src="https://assets-global.website-files.com/6317a229ebf7723658463b4b/631b991aff307a018c353dcd_Logo-Nequi.svg" alt="janneison" title="janneison" align="right" height="60" />
-</a>
+# ARQUITECTURA DE IMPLEMENTACION RECAUDO ELECTRONICO
 
-# Prueba Tecnica Nequi
+En esta documentacion se ilustra la arquitectura de implementacion del proyecto de recaudo eletronico y sus diferentes aplicaciones.
 
-En esta documentacion se resuleve la prueba tecnica para el cargo de Arquitecto de Infraestructura.
+## Arquitectura XSecure
 
-## Arquitectura inicial
+La arquitectura refleja los componetes del sistema como se integran y como estan desplegados.
 
-El problema plantea una arquitectura con una aplicacion monolitica en uno o varios servidores y una persistencia local. El siguiente diagrama ilustra de forma simplificada la arquitectura actual
+![](img/xsecure-EKS.png)
 
-
-![](img/actual.png)
-
-## Manejo de cuentas
-Como primera medida se sugiere el uso de aws organizations para gestionar las cuentas y de ser posible utilizar single sign on para disminuir la administracion de usuarios y evitar que el usuario deba conocer muchas contraseñas.
-
-![](img/cuentas.png)
-
+- Github: Representa el versionador de codigo fuente(puede ser cualquiera basado en git).
+- Terraform: Para la construccion de la infraestructura como codigo, de igual manera usara un bucket de s3 para el manejo del estado de la infraestructura.
+- Pipeline: se requieren pipeline para desplegar tanto la infraestructura asi como para desplegar en EKS, Lambda y/o s3.
+- 
 ## Arquitectura para el manejo de devops
 
 El siguiente diagrama ilustra la propuesta para el despliegue de infraestructura y el despliegues continuo de las palicaciones
