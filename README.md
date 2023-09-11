@@ -4,14 +4,14 @@ En esta documentacion se ilustra la arquitectura de implementacion del proyecto 
 
 ## Arquitectura XSecure
 
-La arquitectura refleja los componetes del sistema como se integran y como estan desplegados.
+La arquitectura refleja los componentes del sistema como se integran y como estan desplegados, notese que los componentes estan desplegas en una red privada y solo se tiene acesso por medio de unas puertas de enla ce especificas.
 
 ![](img/xsecure-EKS.png)
 
-- Github: Representa el versionador de codigo fuente(puede ser cualquiera basado en git).
-- Terraform: Para la construccion de la infraestructura como codigo, de igual manera usara un bucket de s3 para el manejo del estado de la infraestructura.
-- Pipeline: se requieren pipeline para desplegar tanto la infraestructura asi como para desplegar en EKS, Lambda y/o s3.
-- 
+- WAF: El firewall nos permitira crear ACL para acceso al sistema y mitigar ataques, siguiendo el standar de owas.
+- EKS: Cluster que permite desplegar los contendores.
+- RDS: se requieren pipeline para desplegar tanto la infraestructura asi como para desplegar en EKS, Lambda y/o s3.
+- Guard Duty: Realiza el control sobre ransoware y configuraciones de seguridad.
 ## Arquitectura para el manejo de devops
 
 El siguiente diagrama ilustra la propuesta para el despliegue de infraestructura y el despliegues continuo de las palicaciones
