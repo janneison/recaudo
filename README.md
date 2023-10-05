@@ -29,6 +29,7 @@ El siguiente diagrama ilustra la arquitectura global del sistema se maneja a man
 - Cloudwacth: aqui manejaremos los logs.
 - Almacenamiento: los archivos se alamacenan en s3.
 - Seguridad: Se usuara kms para guardar certificados de seguridad, secret manager para los secretos y waf para la seguridad perimetral y guard dutty para reforzar la seguridad.
+- Operaciones de venta: utilizamos un mecanismo de apigateway lo que no permite ser flexibles con los operadores de recarga, cumplir con el estandar de OWASP para apis,y nos aseguramos que todas las operaciones sean en linea por medio de internet y utilizando protocolos seguros ssl y jwt, esto implica que no tenga ninguna limitacion a la hora de recargar, pagar y o consultar saldos.
 
 
 
